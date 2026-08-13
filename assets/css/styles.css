@@ -112,8 +112,22 @@ h2{ font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 10px; }
   position: relative;
   z-index: 1;
 }
+
+/* ===== CORREÇÃO 1: onça reaparece embaixo, centralizada, no mobile ===== */
 @media (max-width: 1000px){
-  .formacao-onca{ display: none; }
+  #formacao{
+    display: flex;
+    flex-direction: column;
+  }
+  .formacao-onca{
+    display: block;
+    position: static;   /* sai do absolute que a escondia fora da tela */
+    order: 99;           /* joga pro final do container flex, após o info-card */
+    width: 260px;
+    max-width: 70%;
+    margin: 40px auto 0;
+    opacity: 0.95;
+  }
 }
 
 /* ---------- HEADER / NAV ---------- */
@@ -279,8 +293,15 @@ h1 .accent{ background: var(--gradient); -webkit-background-clip:text; backgroun
 .data-number{ font-family: var(--font-mono); font-size: 1.4rem; font-weight:700; color: var(--red-deep); }
 .data-label{ font-size: 0.85rem; color: var(--muted); }
 
+/* ===== CORREÇÃO 2: imagem da trajetória centralizada, sem espaço vazio ===== */
 @media (max-width: 860px){
   .about-body{ flex-direction:column; text-align:center; padding: 24px; }
+  .about-image{
+    flex: 0 0 auto;      /* remove o basis de 400px que virava altura no eixo vertical */
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
   .about-buttons-data{ flex-direction:column; align-items:stretch; }
   .data-container{ justify-content:center; }
 }
