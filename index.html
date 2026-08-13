@@ -14,7 +14,7 @@
   <!-- Fontes do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- SWIPER CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -29,7 +29,10 @@
   <!-- Cabeçalho da Página (header) -->
   <header>
     <div class="wrap">
-      <a class="brand" href="#topo">Luiza <span>Paolinelli</span></a>
+      <a class="brand" href="#topo">
+        Luiza <span>Paolinelli</span>
+        <img src="./assets/img/manga.png" alt="Logo Luiza Paolinelli" class="brand-logo">
+      </a>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
       <nav>
         <ul class="nav-links" id="navLinks">
@@ -57,25 +60,21 @@
         <p class="lede">Desenvolvedora Full Stack formada pela Generation Brasil e estudante de Análise e Desenvolvimento de Sistemas pelo IFSP.</p>
         <p class="lede">Meu propósito é desenvolver soluções criativas, com código limpo e foco em qualidade.</p>
 
-        <div class="meta-row">
-          <span>✉️ luizavpg@gmail.com</span>
-          <span>💼 linkedin.com/in/luizavpg</span>
-        </div>
-
-        <div class="buttons-container">
+          <div class="buttons-container">
           <a href="#contato" class="botao">Entre em Contato</a>
         </div>
       </article>
 
       <!-- IMAGEM -->
       <figure class="hero-image">
-        <img src="./assets/img/foto_dev_man.svg" alt="Foto do autor." class="float-animation">
+        <img src="./assets/img/myprofile.png" alt="Foto do autor." class="float-animation">
       </figure>
 
     </section>
 
     <!-- Seção de Formação -->
     <section id="formacao" class="wrap reveal">
+      <img src="./assets/img/onca.png" alt="" class="formacao-onca" aria-hidden="true">
       <div class="section-head">
         <span class="eyebrow">Formação acadêmica</span>
         <h2>Formação</h2>
@@ -127,40 +126,42 @@
     <section id="trajetoria" class="section-container about-container">
       <div class="section-head">
         <span class="eyebrow">Minha trajetória</span>
+        <h2>Do marketing ao código</h2>
       </div>
 
-      <figure class="about-image">
-        <img src="./assets/img/avatar_dev_man.svg" alt="Foto do perfil">
-      </figure>
+      <div class="about-body">
+        <figure class="about-image">
+          <img src="./assets/img/teste 1.png" alt="Foto do perfil">
+        </figure>
 
-      <article class="about-content">
-        <h2>Do marketing ao código</h2>
-        <p>Sempre fui movida pelo raciocínio lógico e por resolver problemas. Atuando por mais de quatro anos no marketing digital para marcas como ArcelorMittal e Unimed, o contato direto com a operação me fez ir além da comunicação: eu queria resolver as falhas dos sites e entender o que acontecia por trás da interface. Foi essa busca por soluções práticas que me levou naturalmente para a programação.</p>
-        <p>Hoje, consolido minha transição cursando Análise e Desenvolvimento de Sistemas no IFSP e pelo bootcamp da Generation Brasil. Na prática, crio aplicações completas, integrando APIs e bancos de dados em projetos focados na experiência do usuário e na eficiência do código. Uno minha bagagem de mercado ao desenvolvimento de software para entregar soluções que geram valor real.</p>
+        <article class="about-content">
+          <p>Sempre fui movida pelo raciocínio lógico e por resolver problemas. Atuando por mais de quatro anos no marketing digital para marcas como ArcelorMittal e Unimed, o contato direto com a operação me fez ir além da comunicação: eu queria resolver as falhas dos sites e entender o que acontecia por trás da interface. Foi essa busca por soluções práticas que me levou naturalmente para a programação.</p>
+          <p>Hoje, consolido minha transição cursando Análise e Desenvolvimento de Sistemas no IFSP e pelo bootcamp da Generation Brasil. Na prática, crio aplicações completas, integrando APIs e bancos de dados em projetos focados na experiência do usuário e na eficiência do código. Uno minha bagagem de mercado ao desenvolvimento de software para entregar soluções que geram valor real.</p>
 
-        <div class="about-buttons-data">
-          <div class="buttons-container">
-            <a href="https://github.com/luizavpg-bit" target="_blank" class="botao">GitHub</a>
-            <a href="#" target="_blank" class="botao-outline">Currículo</a>
-          </div>
-
-          <div class="data-container">
-            <div class="data-item">
-              <span class="data-number" id="seguidores">--</span>
-              <span class="data-label">Seguidores</span>
+          <div class="about-buttons-data">
+            <div class="buttons-container">
+              <a href="https://github.com/luizavpg-bit" target="_blank" class="botao">GitHub</a>
+              <a href="#" target="_blank" class="botao-outline">Currículo</a>
             </div>
-            <div class="data-item">
-              <span class="data-number" id="repositorios">--</span>
-              <span class="data-label">Repositórios</span>
+
+            <div class="data-container">
+              <div class="data-item">
+                <span class="data-number" id="seguidores">--</span>
+                <span class="data-label">Seguidores</span>
+              </div>
+              <div class="data-item">
+                <span class="data-number" id="repositorios">--</span>
+                <span class="data-label">Repositórios</span>
+              </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </section>
 
     <!-- Seção Projetos do autor -->
     <section id="projetos" class="section-container projects-container">
-      <h2>Meus Projetos</h2>
+      <img src="./assets/img/title-projetos.png" alt="Meus Projetos" class="projects-title-img">
 
       <!-- Swiper Container -->
       <div class="swiper projects-swiper">
@@ -168,7 +169,7 @@
           <div class="swiper-slide">
             <article class="project-card">
               <div class="project-image">
-                <img src="./assets/icons/languages/java.svg" alt="Ícone Java" />
+                <img src="./assets/icons/java.svg" alt="Ícone Java" />
               </div>
 
               <div class="project-content">
@@ -188,7 +189,7 @@
           <div class="swiper-slide">
             <article class="project-card">
               <div class="project-image">
-                <img src="./assets/icons/languages/java.svg" alt="Ícone Java" />
+                <img src="./assets/icons/java.svg" alt="Ícone Java" />
               </div>
 
               <div class="project-content">
@@ -273,12 +274,12 @@
 
       <div class="cert-grid">
         <div class="cert-card">
-          <span class="cert-year">[ano]</span>
+          <span class="cert-year">[2026]</span>
           <span class="cert-name">Técnicas de Levantamento e Análise de Dados em Marketing</span>
           <span class="cert-meta">FEA-USP · Profs. Mazzon, Silva e Vieira</span>
         </div>
         <div class="cert-card">
-          <span class="cert-year">[ano]</span>
+          <span class="cert-year">[2026]</span>
           <span class="cert-name">Especialização em Análise de Dados com Python (73h)</span>
           <span class="cert-meta">USP ESALQ</span>
         </div>
@@ -288,23 +289,28 @@
     <!-- Seção Formulário de Contato e Redes Sociais -->
     <section id="contato" class="section-container contact-container">
 
-      <!-- REDES SOCIAIS -->
+      <!-- COLUNA ESQUERDA: TEXTO + REDES SOCIAIS, COM IMAGEM DECORATIVA -->
       <article class="contact-info">
+        <img src="./assets/img/capi.png" alt="" class="contact-capi" aria-hidden="true">
+
         <h2>Entre em Contato</h2>
         <p>Sinta-se à vontade para entrar em contato comigo!</p>
 
         <div class="social-container">
           <a href="https://www.linkedin.com/in/luizavpg/" target="_blank" class="social-icon" aria-label="LinkedIn">
-            <img src="./assets/icons/social/linkedin.svg" alt="LinkedIn de Luiza Paolinelli">
+            <img src="./assets/icons/linkedin.svg" alt="LinkedIn de Luiza Paolinelli">
           </a>
           <a href="https://github.com/luizavpg-bit" target="_blank" class="social-icon" aria-label="GitHub">
-            <img src="./assets/icons/social/github.svg" alt="GitHub de Luiza Paolinelli">
+            <img src="./assets/icons/github.svg" alt="GitHub de Luiza Paolinelli">
           </a>
         </div>
       </article>
 
       <!-- FORMULÁRIO -->
-      <form id="formulario">
+      <form id="formulario" action="https://formsubmit.co/luizavpg@gmail.com" method="POST">
+
+        <input type="hidden" name="_next" value="http://localhost:5500/success.html">
+        <input type="hidden" name="_captcha" value="false">
 
         <label for="nome">Nome</label>
         <input id="nome" name="nome" type="text" placeholder="Digite o seu nome completo">

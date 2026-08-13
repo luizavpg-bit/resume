@@ -61,7 +61,7 @@ getPerfilGithub();
 // ============================================
 const swiperWrapper = document.querySelector('.swiper-wrapper');
 
-// Ícones de linguagem disponíveis em assets/icons/languages/
+// Ícones de linguagem disponíveis direto em assets/icons/ (sem subpastas)
 const linguagens = {
   'JavaScript': 'javascript',
   'TypeScript': 'typescript',
@@ -91,7 +91,7 @@ async function getProjetosGithub() {
     repositorios.forEach(repositorio => {
       const linguagem = repositorio.language || 'GitHub';
       const logo = linguagens[linguagem] ?? 'github';
-      const urlLogo = `./assets/icons/languages/${logo}.svg`;
+      const urlLogo = `./assets/icons/${logo}.svg`;
 
       const nomeFormatado = repositorio.name
         .replace(/[-_]/g, ' ')
@@ -113,7 +113,7 @@ async function getProjetosGithub() {
           <article class="project-card">
             <div class="project-image">
               <img src="${urlLogo}" alt="Ícone ${linguagem}"
-                onerror="this.onerror=null; this.src='./assets/icons/languages/github.svg';">
+                onerror="this.onerror=null; this.src='./assets/icons/github.svg';">
             </div>
             <div class="project-content">
               <h3>${nomeFormatado}</h3>
@@ -165,6 +165,59 @@ function iniciarSwiper() {
     grabCursor: true,
   });
 }
+
+// ============================================
+// CARDS DE COMPETÊNCIAS → CLICÁVEIS, DESTACAM COM BORDA
+// ============================================
+document.querySelectorAll('.skills-card').forEach(card => {
+  card.addEventListener('click', (event) => {
+    if (event.target.closest('.chip')) return; // clique num chip tem ação própria
+    const jaAtivo = card.classList.contains('active');
+    document.querySelectorAll('.skills-card').forEach(c => c.classList.remove('active'));
+    if (!jaAtivo) card.classList.add('active');
+  });
+});
+
+// ============================================
+// CHIPS DE COMPETÊNCIAS → DESTACAM PROJETOS RELACIONADOS
+// ============================================
+function normalizaTexto(txt){
+  return txt.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
+}
+
+document.querySelectorAll('.skills-grid .chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const skillNorm = normalizaTexto(chip.textContent);
+    const cards = document.querySelectorAll('#projetos .project-card');
+    let algumaCorrespondencia = false;
+
+    cards.forEach(card => card.classList.remove('chip-match', 'chip-dim'));
+
+    cards.forEach(card => {
+      const tags = card.querySelectorAll('.tag');
+      const bate = Array.from(tags).some(tag => {
+        const tagNorm = normalizaTexto(tag.textContent);
+        return tagNorm && (skillNorm.includes(tagNorm) || tagNorm.includes(skillNorm));
+      });
+      if (bate) {
+        card.classList.add('chip-match');
+        algumaCorrespondencia = true;
+      }
+    });
+
+    if (algumaCorrespondencia) {
+      cards.forEach(card => {
+        if (!card.classList.contains('chip-match')) card.classList.add('chip-dim');
+      });
+    }
+
+    document.getElementById('projetos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    setTimeout(() => {
+      cards.forEach(card => card.classList.remove('chip-match', 'chip-dim'));
+    }, 2500);
+  });
+});
 
 // ============================================
 // VALIDAÇÃO DE FORMULÁRIO
