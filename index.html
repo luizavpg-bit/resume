@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <script>
@@ -13,21 +12,21 @@
   <meta name="author" content="Luiza Paolinelli">
   <meta name="description" content="Portfólio da Luiza Paolinelli, desenvolvedora Full Stack especializada em criar experiências digitais incríveis. Conheça meus projetos e entre em contato.">
   <meta name="robots" content="index, follow">
-
   <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
-
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+  
+  <!-- External CSS Libraries and Stylesheet -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
   <link rel="stylesheet" href="./assets/css/styles.css">
-
   <title>Portfólio Luiza Paolinelli</title>
 </head>
-
 <body>
+  <!-- Link para Acessibilidade (Skip Link) -->
+  <a href="#topo" class="skip-link">Pular para o conteúdo principal</a>
 
   <!-- Header -->
   <header>
@@ -36,7 +35,7 @@
         Luiza <span>Paolinelli</span>
         <img src="./assets/img/manga.png" alt="Logo Luiza Paolinelli" class="brand-logo">
       </a>
-      <nav>
+      <nav aria-label="Navegação principal">
         <ul class="nav-links" id="navLinks">
           <li><a href="#formacao">Formação</a></li>
           <li><a href="#trajetoria">Trajetória</a></li>
@@ -47,33 +46,28 @@
         </ul>
       </nav>
       <div class="header-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro">🌙</button>
-        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro"></button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">=</button>
       </div>
     </div>
   </header>
 
   <main>
-
     <!-- Hero -->
     <section id="topo" class="section-container hero-container">
-
       <article class="hero-content">
         <span class="eyebrow">São Paulo, SP · Desenvolvedora Full Stack</span>
         <h1>Luiza<span class="accent"> Paolinelli</span></h1>
         <p class="lede">Desenvolvedora Full Stack formada pela Generation Brasil e estudante de Análise e Desenvolvimento de Sistemas pelo IFSP.</p>
         <p class="lede">Meu propósito é desenvolver soluções criativas, com código limpo e foco em qualidade.</p>
-
         <div class="buttons-container">
           <a href="#contato" class="botao">Entre em Contato</a>
         </div>
       </article>
-
       <figure class="hero-image">
-        <img src="./assets/img/myprofile-light.png" alt="Foto do autor." class="float-animation theme-img-light">
-        <img src="./assets/img/myprofile-dark.png" alt="Foto do autor." class="float-animation theme-img-dark">
+        <img src="./assets/img/myprofile-light.png" alt="Foto de perfil de Luiza Paolinelli no modo claro" class="float-animation theme-img-light">
+        <img src="./assets/img/myprofile-dark.png" alt="Foto de perfil de Luiza Paolinelli no modo escuro" class="float-animation theme-img-dark">
       </figure>
-
     </section>
 
     <!-- Formação -->
@@ -85,17 +79,15 @@
           <span class="eyebrow">Formação acadêmica</span>
           <h2>Formação</h2>
         </div>
-
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-head">
               <span class="timeline-role">Análise e Desenvolvimento de Sistemas</span>
-              <span class="timeline-period">2026 - 2029</span>
+              <span class="timeline-period">2026-2029</span>
             </div>
             <div class="timeline-org">IFSP</div>
           </div>
-
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-head">
@@ -104,17 +96,15 @@
             </div>
             <div class="timeline-org">Generation Brasil</div>
           </div>
-
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-head">
               <span class="timeline-role">Publicidade e Propaganda</span>
-              <span class="timeline-period">2017 - 2021</span>
+              <span class="timeline-period">2017-2021</span>
             </div>
             <div class="timeline-org">Una</div>
           </div>
         </div>
-
         <div class="info-card" style="margin-top:32px; max-width:340px;">
           <span class="label">Idiomas</span>
           <div class="lang-bar">
@@ -136,23 +126,19 @@
           <span class="eyebrow">Minha trajetória</span>
           <h2>Do marketing ao código</h2>
         </div>
-
         <div class="about-body">
           <figure class="about-image">
-            <img src="./assets/img/trajetoria-light.png" alt="Foto do perfil" class="theme-img-light">
-            <img src="./assets/img/trajetoria-dark.png" alt="Foto do perfil" class="theme-img-dark">
+            <img src="./assets/img/trajetoria-light.png" alt="Foto ilustrativa da trajetória de Luiza no modo claro" class="theme-img-light">
+            <img src="./assets/img/trajetoria-dark.png" alt="Foto ilustrativa da trajetória de Luiza no modo escuro" class="theme-img-dark">
           </figure>
-
           <article class="about-content">
             <p>Sempre fui movida pelo raciocínio lógico e por resolver problemas. Atuando por mais de quatro anos no marketing digital para marcas como ArcelorMittal e Unimed, o contato direto com a operação me fez ir além da comunicação: eu queria resolver as falhas dos sites e entender o que acontecia por trás da interface. Foi essa busca por soluções práticas que me levou naturalmente para a programação.</p>
             <p>Hoje, consolido minha transição cursando Análise e Desenvolvimento de Sistemas no IFSP e pelo bootcamp da Generation Brasil. Na prática, crio aplicações completas, integrando APIs e bancos de dados em projetos focados na experiência do usuário e na eficiência do código. Uno minha bagagem de mercado ao desenvolvimento de software para entregar soluções que geram valor real.</p>
-
             <div class="about-buttons-data">
               <div class="buttons-container">
-                <a href="https://github.com/luizavpg-bit" target="_blank" class="botao">GitHub</a>
-                <a href="#" target="_blank" class="botao-outline">Currículo</a>
+                <a href="https://github.com/luizavpg-bit" target="_blank" rel="noopener noreferrer" class="botao">GitHub</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="botao-outline">Currículo</a>
               </div>
-
               <div class="data-container">
                 <div class="data-item">
                   <span class="data-number" id="seguidores">--</span>
@@ -173,55 +159,34 @@
     <section id="projetos">
       <div class="wrap projects-container">
         <img src="./assets/img/title-projetos.png" alt="Meus Projetos" class="projects-title-img">
-
         <!-- Carrossel Swiper -->
         <div class="swiper projects-swiper">
           <div class="swiper-wrapper">
+            <!-- Skeleton inicial para evitar layout shift durante o carregamento -->
             <div class="swiper-slide">
-              <article class="project-card">
-                <div class="project-image">
-                  <img src="./assets/icons/java.svg" alt="Ícone Java" />
-                </div>
-
+              <article class="project-card skeleton-card">
+                <div class="project-image skeleton-box"></div>
                 <div class="project-content">
-                  <h3>Livraria Alquimia</h3>
-                  <p>Sistema de gerenciamento de livraria em Java, com cadastro, controle de estoque e regras de negócio aplicadas via orientação a objetos.</p>
-                  <div class="project-tags">
-                    <span class="tag">Java</span>
-                    <span class="tag">OOP</span>
-                  </div>
-                  <div class="project-buttons">
-                    <a href="https://github.com/luizavpg-bit/projeto_livraria_alquimia" target="_blank" class="botao botao-sm">GitHub</a>
-                  </div>
+                  <div class="skeleton-line title"></div>
+                  <div class="skeleton-line text"></div>
+                  <div class="skeleton-line text short"></div>
                 </div>
               </article>
             </div>
-
             <div class="swiper-slide">
-              <article class="project-card">
-                <div class="project-image">
-                  <img src="./assets/icons/java.svg" alt="Ícone Java" />
-                </div>
-
+              <article class="project-card skeleton-card">
+                <div class="project-image skeleton-box"></div>
                 <div class="project-content">
-                  <h3>Banco do Brazil com Z</h3>
-                  <p>Sistema bancário em Java simulando abertura de conta, depósitos, saques e transferências, com foco em lógica de negócio e estruturação de classes.</p>
-                  <div class="project-tags">
-                    <span class="tag">Java</span>
-                    <span class="tag">Lógica</span>
-                  </div>
-                  <div class="project-buttons">
-                    <a href="https://github.com/luizavpg-bit/conta_bancaria" target="_blank" class="botao botao-sm">GitHub</a>
-                  </div>
+                  <div class="skeleton-line title"></div>
+                  <div class="skeleton-line text"></div>
+                  <div class="skeleton-line text short"></div>
                 </div>
               </article>
             </div>
           </div>
-
           <!-- Setas de navegação -->
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-
+          <div class="swiper-button-next" aria-label="Próximo projeto"></div>
+          <div class="swiper-button-prev" aria-label="Projeto anterior"></div>
           <!-- Bolinhas de paginação -->
           <div class="swiper-pagination"></div>
         </div>
@@ -236,7 +201,6 @@
           <h2>Competências</h2>
           <p class="section-sub">O que já domino e o que estou construindo, organizado por área.</p>
         </div>
-
         <div class="skills-grid">
           <div class="skills-card primary">
             <div class="skills-card-title">Desenvolvimento</div>
@@ -248,10 +212,9 @@
               <span class="chip">JavaScript</span>
               <span class="chip">HTML &amp; CSS</span>
               <span class="chip">Git &amp; GitHub</span>
-              <span class="chip">SQL (em desenvolvimento)</span>
+              <span class="chip">SQL</span>
             </div>
           </div>
-
           <div class="skills-card">
             <div class="skills-card-title">Dados</div>
             <div class="skills-card-sub">Análise e visualização</div>
@@ -262,7 +225,6 @@
               <span class="chip">Excel</span>
             </div>
           </div>
-
           <div class="skills-card">
             <div class="skills-card-title">Marketing &amp; Growth</div>
             <div class="skills-card-sub">Bagagem profissional</div>
@@ -286,7 +248,6 @@
           <h2>Certificações</h2>
           <p class="section-sub">Formação complementar em análise de dados e marketing.</p>
         </div>
-
         <div class="cert-grid">
           <div class="cert-card">
             <span class="cert-year">[2026]</span>
@@ -305,64 +266,62 @@
     <!-- Contato -->
     <section id="contato">
       <div class="wrap contact-container">
-
         <!-- Texto e redes sociais -->
         <article class="contact-info">
           <img src="./assets/img/capi-light.png" alt="" class="contact-capi theme-img-light" aria-hidden="true">
           <img src="./assets/img/capi-dark.png" alt="" class="contact-capi theme-img-dark" aria-hidden="true">
-
           <h2>Entre em Contato</h2>
           <p>Sinta-se à vontade para entrar em contato comigo!</p>
-
           <div class="social-container">
-            <a href="https://www.linkedin.com/in/luizavpg/" target="_blank" class="social-icon" aria-label="LinkedIn">
-              <img src="./assets/icons/linkedin.svg" alt="LinkedIn de Luiza Paolinelli">
+            <a href="https://www.linkedin.com/in/luizavpg/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Perfil do LinkedIn de Luiza Paolinelli">
+              <img src="./assets/icons/linkedin.svg" alt="LinkedIn">
             </a>
-            <a href="https://github.com/luizavpg-bit" target="_blank" class="social-icon" aria-label="GitHub">
-              <img src="./assets/icons/github.svg" alt="GitHub de Luiza Paolinelli">
+            <a href="https://github.com/luizavpg-bit" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Perfil do GitHub de Luiza Paolinelli">
+              <img src="./assets/icons/github.svg" alt="GitHub">
             </a>
           </div>
         </article>
 
         <!-- Formulário de contato -->
-        <form id="formulario" action="https://formsubmit.co/luizavpg@gmail.com" method="POST">
-
+        <form id="formulario" action="https://formsubmit.co/luizavpg@gmail.com" method="POST" novalidate>
           <input type="hidden" name="_next" value="https://luizavpg-bit.github.io/resume/success.html">
           <input type="hidden" name="_captcha" value="false">
+          
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" placeholder="Digite o seu nome completo" autocomplete="name" aria-required="true">
+            <span id="erro-nome" class="erro-msg" aria-live="polite"></span>
+          </div>
 
-          <label for="nome">Nome</label>
-          <input id="nome" name="nome" type="text" placeholder="Digite o seu nome completo">
-          <span id="erro-nome"></span>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" placeholder="Digite o seu e-mail" autocomplete="email" aria-required="true">
+            <span id="erro-email" class="erro-msg" aria-live="polite"></span>
+          </div>
 
-          <label for="email">E-mail</label>
-          <input id="email" name="email" type="text" placeholder="Digite o seu e-mail">
-          <span id="erro-email"></span>
+          <div class="form-group">
+            <label for="assunto">Assunto</label>
+            <input id="assunto" name="assunto" type="text" placeholder="Digite o assunto da mensagem" autocomplete="off" aria-required="true">
+            <span id="erro-assunto" class="erro-msg" aria-live="polite"></span>
+          </div>
 
-          <label for="assunto">Assunto</label>
-          <input id="assunto" name="assunto" type="text" placeholder="Digite o assunto da mensagem">
-          <span id="erro-assunto"></span>
-
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" placeholder="Escreva a sua mensagem aqui..."></textarea>
-          <span id="erro-mensagem"></span>
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Escreva a sua mensagem aqui..." aria-required="true"></textarea>
+            <span id="erro-mensagem" class="erro-msg" aria-live="polite"></span>
+          </div>
 
           <button class="botao" type="submit">Enviar Mensagem</button>
         </form>
-
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
   <footer>
-    Desenvolvido por Luiza Paolinelli - 2026
+    <span id="footerNote">Desenvolvido por Luiza Paolinelli - 2026</span>
   </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
   <script src="./assets/js/scripts.js"></script>
-
 </body>
-
 </html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <script>
@@ -13,21 +12,21 @@
   <meta name="author" content="Luiza Paolinelli">
   <meta name="description" content="Mensagem enviada com sucesso. Obrigada pelo contato.">
   <meta name="robots" content="noindex, follow">
-
   <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
-
+  
   <!-- Fontes do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+  
   <!-- Folha de estilo própria -->
   <link rel="stylesheet" href="./assets/css/styles.css">
-
-  <title>Mensagem enviada · Luiza Paolinelli</title>
+  <title>Mensagem enviada - Luiza Paolinelli</title>
 </head>
-
 <body>
+  <!-- Link para Acessibilidade (Skip Link) -->
+  <a href="#sucesso-conteudo" class="skip-link">Pular para o conteúdo principal</a>
+
   <!-- Cabeçalho da Página (header) -->
   <header>
     <div class="wrap">
@@ -35,8 +34,8 @@
         Luiza <span>Paolinelli</span>
         <img src="./assets/img/manga.png" alt="Logo Luiza Paolinelli" class="brand-logo">
       </a>
-      <nav>
-        <ul class="nav-links">
+      <nav aria-label="Navegação principal">
+        <ul class="nav-links" id="navLinks">
           <li><a href="index.html#formacao">Formação</a></li>
           <li><a href="index.html#trajetoria">Trajetória</a></li>
           <li><a href="index.html#projetos">Projetos</a></li>
@@ -46,41 +45,34 @@
         </ul>
       </nav>
       <div class="header-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro">🌙</button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro"></button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">=</button>
       </div>
     </div>
   </header>
 
   <!-- Seção Principal da Página (main) -->
-  <main>
-
+  <main id="sucesso-conteudo">
     <!-- Mensagem de Sucesso -->
     <section class="success-container">
-
       <div class="success-media">
-        <img src="./assets/img/success-01-light.png" alt="Ilustração comemorando o envio da mensagem" class="success-image theme-img-light">
-        <img src="./assets/img/success-01-dark.png" alt="Ilustração comemorando o envio da mensagem" class="success-image theme-img-dark">
+        <img src="./assets/img/success-01-light.png" alt="Ilustração comemorando o envio da mensagem no modo claro" class="success-image theme-img-light">
+        <img src="./assets/img/success-01-dark.png" alt="Ilustração comemorando o envio da mensagem no modo escuro" class="success-image theme-img-dark">
       </div>
-
       <div class="success-content">
         <span class="eyebrow">Mensagem enviada</span>
-        <h1>Email Enviado com sucesso!</h1>
+        <h1>E-mail enviado com sucesso!</h1>
         <h2>Obrigada por entrar em contato. Logo mais retorno sua mensagem.</h2>
         <a class="botao" href="index.html">Voltar para o início</a>
       </div>
-
     </section>
-
   </main>
 
   <!-- Rodapé da Página (footer) -->
   <footer>
-    Desenvolvido por Luiza Paolinelli - 2026
+    <span id="footerNote">Desenvolvido por Luiza Paolinelli - 2026</span>
   </footer>
-
   <!-- Script JavaScript -->
   <script src="./assets/js/scripts.js"></script>
-
 </body>
-
 </html>
