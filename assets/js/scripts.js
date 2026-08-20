@@ -1,6 +1,3 @@
-// ============================================
-// MENU RESPONSIVO
-// ============================================
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
@@ -17,9 +14,6 @@ if (navToggle && navLinks) {
   });
 }
 
-// ============================================
-// MODO ESCURO
-// ============================================
 const themeToggle = document.getElementById('themeToggle');
 const THEME_KEY = 'luiza-portfolio-theme';
 
@@ -40,9 +34,6 @@ if (themeToggle) {
   });
 }
 
-// ============================================
-// FADE-IN AO ROLAR A PÁGINA
-// ============================================
 const revealEls = document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {
@@ -59,9 +50,6 @@ if ('IntersectionObserver' in window) {
   revealEls.forEach(el => el.classList.add('is-visible'));
 }
 
-// ============================================
-// BUSCAR DADOS DO PERFIL DO GITHUB
-// ============================================
 const seguidoresEl = document.getElementById('seguidores');
 const repositoriosEl = document.getElementById('repositorios');
 
@@ -79,12 +67,8 @@ async function getPerfilGithub() {
 
 getPerfilGithub();
 
-// ============================================
-// BUSCAR REPOSITÓRIOS DO GITHUB (CARROSSEL)
-// ============================================
 const swiperWrapper = document.querySelector('.swiper-wrapper');
 
-// Ícones de linguagem disponíveis direto em assets/icons/ (sem subpastas)
 const linguagens = {
   'JavaScript': 'javascript',
   'TypeScript': 'typescript',
@@ -161,9 +145,6 @@ async function getProjetosGithub() {
 
 getProjetosGithub();
 
-// ============================================
-// CARROSSEL - SWIPER
-// ============================================
 function iniciarSwiper() {
   new Swiper('.projects-swiper', {
     slidesPerView: 1,
@@ -189,21 +170,15 @@ function iniciarSwiper() {
   });
 }
 
-// ============================================
-// CARDS DE COMPETÊNCIAS → CLICÁVEIS, DESTACAM COM BORDA
-// ============================================
 document.querySelectorAll('.skills-card').forEach(card => {
   card.addEventListener('click', (event) => {
-    if (event.target.closest('.chip')) return; // clique num chip tem ação própria
+    if (event.target.closest('.chip')) return;
     const jaAtivo = card.classList.contains('active');
     document.querySelectorAll('.skills-card').forEach(c => c.classList.remove('active'));
     if (!jaAtivo) card.classList.add('active');
   });
 });
 
-// ============================================
-// CHIPS DE COMPETÊNCIAS → DESTACAM PROJETOS RELACIONADOS
-// ============================================
 function normalizaTexto(txt){
   return txt.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
 }
@@ -242,9 +217,6 @@ document.querySelectorAll('.skills-grid .chip').forEach(chip => {
   });
 });
 
-// ============================================
-// VALIDAÇÃO DE FORMULÁRIO
-// ============================================
 const formulario = document.getElementById('formulario');
 const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -300,9 +272,6 @@ if (formulario) {
   });
 }
 
-// ============================================
-// ANO ATUAL NO RODAPÉ (se existir #footerNote)
-// ============================================
 const footerNote = document.getElementById('footerNote');
 if (footerNote) {
   footerNote.textContent += ` · ${new Date().getFullYear()}`;

@@ -1,9 +1,4 @@
-/* =========================================================
-   Luiza Paolinelli — Portfólio
-   Paleta: verde, laranja, vermelho escuro, vermelho, base creme
-   Tipografia: Lexend Exa (display), Quicksand (corpo), JetBrains Mono (dados)
-   ========================================================= */
-
+/* Variáveis de cor e tipografia */
 :root{
   --bg:            #FBF3E7;
   --surface:       #FFFFFF;
@@ -33,6 +28,7 @@
   --shadow-hover: 0 16px 40px -14px rgba(34, 34, 34, 0.22);
 }
 
+/* Reset e base */
 *{ margin:0; padding:0; box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 
@@ -66,9 +62,9 @@ h1{ font-weight: 700; letter-spacing: -0.01em; }
 h2{ font-weight: 600; }
 h3{ font-weight: 500; }
 
-/* ---------- RITMO VERTICAL PADRÃO DE TODAS AS SEÇÕES ---------- */
-section{ padding: 88px 24px; }
-section.wrap{ padding: 88px 24px; max-width: 1040px; margin: 0 auto; }
+/* Ritmo vertical das seções */
+section{ padding: 88px 0; }
+section[id]{ scroll-margin-top: 6rem; }
 
 .section-container{
   max-width: 1040px; margin: 0 auto; padding: 88px 24px; scroll-margin-top: 6rem;
@@ -77,10 +73,11 @@ section.wrap{ padding: 88px 24px; max-width: 1040px; margin: 0 auto; }
 h2{ font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 10px; }
 .section-sub{ color: var(--muted); font-size: 0.98rem; }
 
+/* Animação de entrada ao rolar */
 .reveal{ opacity:0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.is-visible{ opacity:1; transform:none; }
 
-/* ---------- CORES ALTERNADAS POR SEÇÃO ---------- */
+/* Cor de fundo de cada seção */
 #topo{          background: var(--tint-cream); }
 #formacao{      background: var(--tint-green); position: relative; overflow: hidden; }
 #trajetoria{    background: var(--tint-peach); }
@@ -95,7 +92,7 @@ h2{ font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 10px; }
 #certificacoes{ background: var(--tint-peach); }
 #contato{       background: var(--tint-rose); position: relative; overflow: hidden; }
 
-/* Ilustração decorativa: espaço vazio à direita da coluna de texto na Formação */
+/* Ilustração decorativa da Formação */
 .formacao-onca{
   position: absolute;
   right: 24px;
@@ -106,6 +103,9 @@ h2{ font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 10px; }
   pointer-events: none;
   z-index: 0;
 }
+#formacao .wrap{
+  position: relative;
+}
 #formacao .section-head,
 #formacao .timeline,
 #formacao .info-card{
@@ -113,16 +113,15 @@ h2{ font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 10px; }
   z-index: 1;
 }
 
-/* ===== CORREÇÃO 1: onça reaparece embaixo, centralizada, no mobile ===== */
 @media (max-width: 1000px){
-  #formacao{
+  #formacao .wrap{
     display: flex;
     flex-direction: column;
   }
   .formacao-onca{
     display: block;
-    position: static;   /* sai do absolute que a escondia fora da tela */
-    order: 99;           /* joga pro final do container flex, após o info-card */
+    position: static;
+    order: 99;
     width: 260px;
     max-width: 70%;
     margin: 40px auto 0;
@@ -130,7 +129,7 @@ h2{ font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 10px; }
   }
 }
 
-/* ---------- HEADER / NAV ---------- */
+/* Header */
 header{
   position: sticky; top:0; z-index: 100; width:100%;
   background: rgba(251,243,231,0.9);
@@ -192,6 +191,7 @@ header .wrap{ display:flex; align-items:center; justify-content:space-between; h
   align-items:center; justify-content:center; cursor:pointer; font-size: 1.1rem; color: var(--red-deep);
 }
 
+/* Menu mobile */
 @media (max-width: 780px){
   .nav-links{
     position:fixed; inset: 72px 16px auto 16px;
@@ -208,7 +208,7 @@ header .wrap{ display:flex; align-items:center; justify-content:space-between; h
   .nav-toggle{ display:flex; }
 }
 
-/* ---------- BOTÕES ---------- */
+/* Botões */
 .buttons-container{ display:flex; flex-wrap:wrap; gap: 14px; }
 
 .botao, .botao-outline{
@@ -227,7 +227,7 @@ header .wrap{ display:flex; align-items:center; justify-content:space-between; h
   padding: 6px 16px; font-size: 0.78rem; border-width: 2px;
 }
 
-/* ---------- HERO ---------- */
+/* Hero */
 .hero-container{
   display:flex; align-items:center; gap: 56px; min-height: calc(100vh - 72px);
 }
@@ -256,7 +256,7 @@ h1 .accent{ background: var(--gradient); -webkit-background-clip:text; backgroun
   .lede{ margin-left:auto; margin-right:auto; }
 }
 
-/* ---------- FORMAÇÃO ---------- */
+/* Formação */
 .timeline{ position:relative; padding-left: 28px; border-left: 2px solid var(--line); }
 .timeline-item{ position:relative; padding-bottom: 40px; }
 .timeline-item:last-child{ padding-bottom:0; }
@@ -290,7 +290,7 @@ h1 .accent{ background: var(--gradient); -webkit-background-clip:text; backgroun
 .lang-track{ height: 6px; border-radius: 4px; background: var(--surface-soft); overflow:hidden; margin-bottom: 12px; }
 .lang-fill{ height:100%; border-radius: 4px; background: var(--gradient); }
 
-/* ---------- SOBRE / TRAJETÓRIA ---------- */
+/* Trajetória */
 .about-container{ display:flex; flex-direction:column; }
 .about-body{
   display:flex; align-items:center; gap: 48px;
@@ -299,7 +299,6 @@ h1 .accent{ background: var(--gradient); -webkit-background-clip:text; backgroun
   padding: 40px 24px;
 }
 .about-image{ flex: 0 0 400px; }
-.about-image img{ }
 .about-content p{ color: var(--ink); margin-bottom: 16px; font-size: 1rem; text-align:justify; }
 .about-content p:last-of-type{ margin-bottom: 24px; }
 
@@ -309,11 +308,10 @@ h1 .accent{ background: var(--gradient); -webkit-background-clip:text; backgroun
 .data-number{ font-family: var(--font-mono); font-size: 1.4rem; font-weight:700; color: var(--red-deep); }
 .data-label{ font-size: 0.85rem; color: var(--muted); }
 
-/* ===== CORREÇÃO 2: imagem da trajetória centralizada, sem espaço vazio ===== */
 @media (max-width: 860px){
   .about-body{ flex-direction:column; text-align:center; padding: 24px; }
   .about-image{
-    flex: 0 0 auto;      /* remove o basis de 400px que virava altura no eixo vertical */
+    flex: 0 0 auto;
     width: 100%;
     max-width: 320px;
     margin: 0 auto;
@@ -322,8 +320,8 @@ h1 .accent{ background: var(--gradient); -webkit-background-clip:text; backgroun
   .data-container{ justify-content:center; }
 }
 
-/* ---------- PROJETOS / SWIPER ---------- */
-.projects-container{ text-align:center; scroll-margin-top: 6rem; }
+/* Projetos e carrossel Swiper */
+.projects-container{ text-align:center; }
 
 .projects-title-img{
   max-width: 600px;
@@ -355,19 +353,20 @@ h1 .accent{ background: var(--gradient); -webkit-background-clip:text; backgroun
 .project-content h3{ font-size: 1.1rem; }
 .project-content p{ flex:1; color: var(--muted); font-size: 0.92rem; }
 
-.project-tags{ display:flex; flex-wrap:wrap; gap:6px; }
+/* Tag e botão centralizados no card de projeto */
+.project-tags{ display:flex; flex-wrap:wrap; justify-content:center; gap:6px; }
 .tag{
   font-size: 0.75rem; font-weight:600; padding: 4px 10px; border-radius: 999px;
   background: var(--surface-soft); color: var(--red-deep);
 }
-.project-buttons{ display:flex; gap: 10px; margin-top: 4px; }
+.project-buttons{ display:flex; justify-content:center; gap: 10px; margin-top: 4px; }
 
 .swiper-button-next, .swiper-button-prev{ color: var(--red-deep); }
 .swiper-button-next:hover, .swiper-button-prev:hover{ color: var(--red); }
 .swiper-pagination-bullet{ background: var(--line); opacity:1; }
 .swiper-pagination-bullet-active{ background: var(--red-deep); }
 
-/* ---------- COMPETÊNCIAS (bento grid assimétrico) ---------- */
+/* Competências (bento grid) */
 .skills-grid{
   display: grid;
   grid-template-columns: 1.15fr 1fr;
@@ -381,12 +380,12 @@ h1 .accent{ background: var(--gradient); -webkit-background-clip:text; backgroun
   transition: border-width .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
 
-/* Card âncora: Desenvolvimento — ocupa a coluna esquerda inteira */
+/* Card de destaque: cor sólida e borda grossa */
 .skills-card.primary{
   grid-column: 1;
   grid-row: 1 / 3;
-  background: var(--gradient);
-  border: none;
+  background: var(--red-deep);
+  border: 4px solid var(--ink);
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
@@ -407,7 +406,6 @@ h1 .accent{ background: var(--gradient); -webkit-background-clip:text; backgroun
   transform: scale(1.07);
 }
 
-/* Cards secundários: Dados e Marketing — empilhados na coluna direita */
 .skills-grid .skills-card:not(.primary){ grid-column: 2; }
 .skills-grid .skills-card:nth-child(2){ grid-row: 1; }
 .skills-grid .skills-card:nth-child(3){ grid-row: 2; }
@@ -422,20 +420,19 @@ h1 .accent{ background: var(--gradient); -webkit-background-clip:text; backgroun
 .chip:hover{ transform: scale(1.07); box-shadow: var(--shadow); border-color: var(--red-deep); }
 .chip:active{ transform: scale(0.96); }
 
-/* Destaque ao clicar no card */
+/* Estado ativo ao clicar num card */
 .skills-card.active{
   border-width: 3px;
   border-color: var(--red-deep);
   box-shadow: var(--shadow-hover);
   transform: translateY(-2px);
 }
-/* No card primário (fundo colorido), o destaque vira contorno branco */
 .skills-card.primary.active{
-  border: 3px solid #FFFFFF;
+  border: 4px solid #FFFFFF;
   box-shadow: 0 0 0 3px rgba(255,255,255,0.35), var(--shadow-hover);
 }
 
-/* Destaque temporário nos cards de projeto quando um chip é clicado */
+/* Destaque de projetos ao clicar num chip */
 .project-card.chip-match{
   border-color: var(--red-deep);
   box-shadow: 0 0 0 3px rgba(189,4,2,0.18), var(--shadow-hover);
@@ -450,7 +447,7 @@ h1 .accent{ background: var(--gradient); -webkit-background-clip:text; backgroun
   .skills-grid .skills-card:nth-child(3){ grid-column: auto; grid-row: auto; }
 }
 
-/* ---------- CERTIFICAÇÕES ---------- */
+/* Certificações */
 .cert-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 .cert-card{
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm);
@@ -463,10 +460,9 @@ h1 .accent{ background: var(--gradient); -webkit-background-clip:text; backgroun
 
 @media (max-width: 780px){ .cert-grid{ grid-template-columns: 1fr; } }
 
-/* ---------- CONTATO ---------- */
+/* Contato */
 .contact-container{ display:grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items:center; }
 
-/* Coluna esquerda: tudo centralizado (capivara, título, texto, ícones) */
 .contact-info{
   position: relative;
   display: flex;
@@ -477,7 +473,6 @@ h1 .accent{ background: var(--gradient); -webkit-background-clip:text; backgroun
 .contact-info h2{ margin-bottom: 10px; position:relative; z-index:1; }
 .contact-info p{ color: var(--muted); margin-bottom: 26px; position:relative; z-index:1; }
 
-/* Ilustração decorativa: capivara grande, centralizada, acima do título */
 .contact-capi{
   width: 100%;
   max-width: 380px;
@@ -500,6 +495,7 @@ h1 .accent{ background: var(--gradient); -webkit-background-clip:text; backgroun
 .social-icon img{ width:100%; filter: brightness(0) saturate(100%); }
 .social-icon:hover img{ filter: brightness(0) invert(1); }
 
+/* Formulário de contato */
 form{ display:flex; flex-direction:column; gap: 12px; }
 form label{ font-size: 0.85rem; font-weight:700; }
 form input, form textarea{
@@ -512,9 +508,25 @@ form input:focus, form textarea:focus{ border-color: var(--red-deep); outline:no
 form textarea{ min-height: 100px; resize: vertical; }
 form span{ font-size: 0.78rem; color: var(--red); min-height: 1em; }
 
+form button,form input[type="submit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  width: 100%;
+  padding: 12px 20px;
+  background-color: var(--red-deep);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  cursor: pointer;
+}
+
 @media (max-width: 860px){ .contact-container{ grid-template-columns: 1fr; } }
 
-/* ---------- FOOTER ---------- */
+/* Footer */
 footer{
   padding: 40px 24px; text-align:center; font-size: 0.85rem;
   color: #FFFFFF; background: linear-gradient(120deg, var(--green), var(--red-deep));
@@ -529,9 +541,7 @@ a:focus-visible, button:focus-visible{ outline: 2px solid var(--red-deep); outli
   .reveal{ opacity:1; transform:none; }
 }
 
-/* ========================================
-   PÁGINA SUCCESS — split screen com ilustração
-======================================== */
+/* Página de sucesso do formulário */
 .success-container{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -585,7 +595,7 @@ a:focus-visible, button:focus-visible{ outline: 2px solid var(--red-deep); outli
   }
 }
 
-/* ---------- MODO ESCURO ---------- */
+/* Modo escuro */
 [data-theme="dark"]{
   --bg:            #1A1420;
   --surface:       #241B2E;
@@ -612,7 +622,7 @@ a:focus-visible, button:focus-visible{ outline: 2px solid var(--red-deep); outli
 }
 
 [data-theme="dark"] .skills-card.primary{
-  background: linear-gradient(135deg, var(--accent-purple), var(--red-deep));
+  background: var(--accent-purple);
 }
 
 [data-theme="dark"] .social-icon img{
