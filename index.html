@@ -4,6 +4,12 @@
 <head>
 
   <meta charset="UTF-8">
+  <script>
+    (function() {
+      const tema = localStorage.getItem('luiza-portfolio-theme');
+      if (tema === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Luiza Paolinelli">
   <meta name="description" content="Portfólio da Luiza Paolinelli, desenvolvedora Full Stack especializada em criar experiências digitais incríveis. Conheça meus projetos e entre em contato.">
@@ -33,7 +39,6 @@
         Luiza <span>Paolinelli</span>
         <img src="./assets/img/manga.png" alt="Logo Luiza Paolinelli" class="brand-logo">
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
       <nav>
         <ul class="nav-links" id="navLinks">
           <li><a href="#formacao">Formação</a></li>
@@ -44,6 +49,10 @@
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro">🌙</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      </div>
     </div>
   </header>
 
@@ -67,14 +76,16 @@
 
       <!-- IMAGEM -->
       <figure class="hero-image">
-        <img src="./assets/img/myprofile.png" alt="Foto do autor." class="float-animation">
+        <img src="./assets/img/myprofile-light.png" alt="Foto do autor." class="float-animation theme-img-light">
+        <img src="./assets/img/myprofile-dark.png" alt="Foto do autor." class="float-animation theme-img-dark">
       </figure>
 
     </section>
 
     <!-- Seção de Formação -->
     <section id="formacao" class="wrap reveal">
-      <img src="./assets/img/onca.png" alt="" class="formacao-onca" aria-hidden="true">
+      <img src="./assets/img/onca-light.png" alt="" class="formacao-onca theme-img-light" aria-hidden="true">
+      <img src="./assets/img/onca-dark.png" alt="" class="formacao-onca theme-img-dark" aria-hidden="true">
       <div class="section-head">
         <span class="eyebrow">Formação acadêmica</span>
         <h2>Formação</h2>
@@ -131,7 +142,8 @@
 
       <div class="about-body">
         <figure class="about-image">
-          <img src="./assets/img/teste 1.png" alt="Foto do perfil">
+          <img src="./assets/img/trajetoria-light.png" alt="Foto do perfil" class="theme-img-light">
+          <img src="./assets/img/trajetoria-dark.png" alt="Foto do perfil" class="theme-img-dark">
         </figure>
 
         <article class="about-content">
@@ -291,7 +303,8 @@
 
       <!-- COLUNA ESQUERDA: TEXTO + REDES SOCIAIS, COM IMAGEM DECORATIVA -->
       <article class="contact-info">
-        <img src="./assets/img/capi.png" alt="" class="contact-capi" aria-hidden="true">
+        <img src="./assets/img/capi-light.png" alt="" class="contact-capi theme-img-light" aria-hidden="true">
+        <img src="./assets/img/capi-dark.png" alt="" class="contact-capi theme-img-dark" aria-hidden="true">
 
         <h2>Entre em Contato</h2>
         <p>Sinta-se à vontade para entrar em contato comigo!</p>

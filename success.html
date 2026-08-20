@@ -2,8 +2,13 @@
 <html lang="pt-br">
 
 <head>
-
   <meta charset="UTF-8">
+  <script>
+    (function() {
+      const tema = localStorage.getItem('luiza-portfolio-theme');
+      if (tema === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Luiza Paolinelli">
   <meta name="description" content="Mensagem enviada com sucesso. Obrigada pelo contato.">
@@ -40,6 +45,9 @@
           <li><a href="index.html#contato">Contato</a></li>
         </ul>
       </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro">🌙</button>
+      </div>
     </div>
   </header>
 
@@ -48,15 +56,19 @@
 
     <!-- Mensagem de Sucesso -->
     <section class="success-container">
+
       <div class="success-media">
-        <img src="./assets/img/success-01.png" alt="Ilustração comemorando o envio da mensagem" class="success-image">
+        <img src="./assets/img/success-01-light.png" alt="Ilustração comemorando o envio da mensagem" class="success-image theme-img-light">
+        <img src="./assets/img/success-01-dark.png" alt="Ilustração comemorando o envio da mensagem" class="success-image theme-img-dark">
       </div>
+
       <div class="success-content">
         <span class="eyebrow">Mensagem enviada</span>
         <h1>Email Enviado com sucesso!</h1>
         <h2>Obrigada por entrar em contato. Logo mais retorno sua mensagem.</h2>
         <a class="botao" href="index.html">Voltar para o início</a>
       </div>
+
     </section>
 
   </main>
@@ -65,6 +77,9 @@
   <footer>
     Desenvolvido por Luiza Paolinelli - 2026
   </footer>
+
+  <!-- Script JavaScript -->
+  <script src="./assets/js/scripts.js"></script>
 
 </body>
 

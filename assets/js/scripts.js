@@ -18,6 +18,29 @@ if (navToggle && navLinks) {
 }
 
 // ============================================
+// MODO ESCURO
+// ============================================
+const themeToggle = document.getElementById('themeToggle');
+const THEME_KEY = 'luiza-portfolio-theme';
+
+function aplicarTema(tema) {
+  document.documentElement.setAttribute('data-theme', tema);
+  if (themeToggle) themeToggle.textContent = tema === 'dark' ? '☀️' : '🌙';
+}
+
+const temaAtual = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+aplicarTema(temaAtual);
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const atual = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const novo = atual === 'dark' ? 'light' : 'dark';
+    aplicarTema(novo);
+    localStorage.setItem(THEME_KEY, novo);
+  });
+}
+
+// ============================================
 // FADE-IN AO ROLAR A PÁGINA
 // ============================================
 const revealEls = document.querySelectorAll('.reveal');
@@ -227,8 +250,6 @@ const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 
 if (formulario) {
   formulario.addEventListener('submit', function (event) {
-    event.preventDefault();
-
     document.querySelectorAll('form span').forEach(span => span.innerHTML = '');
     let valido = true;
 
@@ -264,11 +285,17 @@ if (formulario) {
       valido = false;
     }
 
-    if (valido) {
-      const botaoEnviar = formulario.querySelector('button[type="submit"]');
-      botaoEnviar.disabled = true;
-      botaoEnviar.textContent = 'Enviando...';
-      formulario.submit();
+    if (!valido) {
+      event.preventDefault();
+      return;
+    }
+
+    const botaoEnviar = formulario.querySelector('button[type="submit"]');
+    if (botaoEnviar) {
+      setTimeout(() => {
+        botaoEnviar.disabled = true;
+        botaoEnviar.textContent = 'Enviando...';
+      }, 0);
     }
   });
 }
